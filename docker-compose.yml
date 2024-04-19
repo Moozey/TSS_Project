@@ -1,0 +1,24 @@
+ services:
+  mongo:
+    image: mongo:7.0
+    container_name: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: provisioning
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./docker-data/data/db:/data/db
+  mongo-express:
+    image: mongo-express:1.0.2
+    container_name: mongo-ui
+    restart: always
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: provisioning
+      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_BASICAUTH_USERNAME: express-admin
+      ME_CONFIG_BASICAUTH_PASSWORD: express-password
+    ports:
+      - "8061:8081"
