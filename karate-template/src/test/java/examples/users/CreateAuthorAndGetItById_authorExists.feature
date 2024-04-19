@@ -21,3 +21,22 @@ Feature: sample karate test script
 
     * def id = response.id
     * print 'created id is: ', id
+
+  Scenario: create an author and then get it by id - the author does NOT exist
+      * def author =
+        """
+        {
+          "name": "Test Author Mihai Eminescu2",
+          "nationality": "romanian",
+          "birthDate": "2002-09-10",
+          "deathDate": ""
+        }
+        """
+
+      Given url 'http://localhost:8083/authors'
+      And request author
+      When method post
+      Then status 200
+
+      * def id = response.id
+      * print 'created id is: ', id
