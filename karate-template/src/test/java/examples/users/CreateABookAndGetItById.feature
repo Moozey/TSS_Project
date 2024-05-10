@@ -11,7 +11,7 @@ Feature: sample karate test script
     "genre": "poems",
     "publicationDate": "2024-04-17",
     "publisher": "Cosmina Duca",
-    "authorId": "6620160bbe66c449e2079efc"
+    "authorId": "6622d9cdc32d4d0e079ab69f"
 }
       """
 
@@ -19,6 +19,7 @@ Feature: sample karate test script
     And request book
     When method post
     Then status 200
+    And match response.bookId == '#string'
 
-    * def id = response.id
+    * def id = response.bookId
     * print 'created id is: ', id

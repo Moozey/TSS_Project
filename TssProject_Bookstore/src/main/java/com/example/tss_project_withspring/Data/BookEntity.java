@@ -19,7 +19,6 @@ import lombok.Setter;
 public class BookEntity {
     @Id
     private String bookId;
-
     private String title;
     private String genre;
     private LocalDate publicationDate;

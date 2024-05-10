@@ -26,9 +26,9 @@ Feature: sample karate test script
       * def author =
         """
         {
-          "name": "Test Author Mihai Eminescu2",
-          "nationality": "romanian",
-          "birthDate": "2002-09-10",
+          "name": "Ana voinea",
+          "nationality": "dutch",
+          "birthDate": "1997-08-10",
           "deathDate": ""
         }
         """
@@ -38,5 +38,5 @@ Feature: sample karate test script
       When method post
       Then status 200
 
-      * def id = response.id
+      * def id = response.Id
       * print 'created id is: ', id
