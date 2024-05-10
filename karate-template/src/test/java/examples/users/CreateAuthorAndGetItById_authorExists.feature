@@ -26,7 +26,7 @@ Feature: sample karate test script
       * def author =
         """
         {
-          "name": "Ana voinea",
+          "name": "victor hugo",
           "nationality": "dutch",
           "birthDate": "1997-08-10",
           "deathDate": ""
